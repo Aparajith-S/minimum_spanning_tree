@@ -30,6 +30,45 @@ std::string name_generator(uint32 vertex_idx)
 	return temp;
 }
 
+Graph::Graph(const std::string& fileName) : vertices()
+{
+	Vertex temp = Vertex();
+	std::ifstream fptr(fileName);
+	std::istream_iterator<std::string> fstart(fptr);
+	std::istream_iterator<std::string> fend;
+	uint16 NrOfVertices = 0;
+	std::vector<std::string> words(fstart,fend);
+	if (words.size())
+	{
+		NrOfVertices = std::stoi(words.at(0));
+		vertices.rehash(NrOfVertices);
+		std::string name;
+		for (uint32 i = 0; i < NrOfVertices; i++)
+		{
+			name = name_generator(i);
+			vertices[name] = temp;
+		}
+	}
+	if (NrOfVertices)
+	{
+		for (auto iter = words.begin() + 1;
+			iter != words.end();
+			)
+		{
+			//first is the source vertex
+			uint16 src = std::stoi(*iter);
+			iter++;
+			//second is the destination vertex
+			uint16 dest = std::stoi(*iter);
+			iter++;
+			//third is the edge value
+			float32 edge = std::stof(*iter);
+			iter++;
+			this->add(name_generator(src), name_generator(dest), edge);
+		}
+	}
+}
+
 uint32 Graph::V() 
 {
 	return vertices.size();

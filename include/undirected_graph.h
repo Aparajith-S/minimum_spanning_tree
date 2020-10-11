@@ -59,22 +59,7 @@ public:
 
 	///@brief constructor that takes number of vertices and creates a graph with vertices and egdes as it is read from a file
 	///@see ReadMe.md to understand how the file needs to be input
-	Graph(const std::string& fileName) : vertices()
-	{
-		Vertex temp = Vertex();
-		std::ifstream fptr(fileName);
-		std::istream_iterator<std::string> fstart(fptr);
-		std::istream_iterator<std::string> fend;
-		uint16 NrOfVertices=0;
-		std::vector<std::string> words;
-		vertices.rehash(NrOfVertices);
-		std::string name;
-		for (uint32 i = 0; i < NrOfVertices; i++)
-		{
-			name = name_generator(i);
-			vertices[name] = temp;
-		}
-	};
+	Graph(const std::string& fileName);
 
 	virtual ~Graph() 
 	{
