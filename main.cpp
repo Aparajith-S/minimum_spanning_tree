@@ -1,7 +1,10 @@
 #include<iostream>
-#include"include/minimum_spanning_tree.h"
+#include"include/kruskal_simulation.h"
 int main()
 {
-	//Make tests here without dependency on gtests
+	std::string fileName("SampleTestData_mst_data.txt");
+	KruskalSimulation sim(fileName);
+	sim.printGraph();
+
 	return 0;
 }
