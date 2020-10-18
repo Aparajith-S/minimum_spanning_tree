@@ -1,3 +1,4 @@
+/// @project    Kruskals Minimum Spanning Tree 
 /// @brief	Undirected graph class declarations
 /// @file	undirected_graph.h
 /// @author Aparajith Sridharan (s.aparajith@live.com)
@@ -17,7 +18,6 @@
 #include<unordered_map>
 #include<float.h>
 #include<fstream>
-#include"priority_queue.h"
 #include"types.h"
 
 namespace undirectedGraph {

@@ -1,3 +1,4 @@
+/// @project    Kruskals Minimum Spanning Tree
 /// @brief   Undirected graph class definitions
 /// @file    undirected_graph.cpp
 /// @author  Aparajith Sridharan (s.aparajith@live.com)
@@ -8,6 +9,7 @@
 #include"undirected_graph.h"
 #include<algorithm>
 #include"myalgorithm.h"
+#include<iostream>
 namespace undirectedGraph {
 	/// @brief : vertex name generator
 	/// @see : undirected_graph.h for more details
@@ -30,6 +32,7 @@ namespace undirectedGraph {
 		}
 		return temp;
 	}
+
 	Graph::Graph(const uint32 nodes) :numNodes(nodes)
 	{}
 
@@ -40,27 +43,32 @@ namespace undirectedGraph {
 		std::istream_iterator<std::string> fend;
 		uint16 NrOfVertices = 0;
 		std::vector<std::string> words(fstart, fend);
-		if (words.size())
+		if (!fptr)
+			std::cout << "ERROR! File not found";
+		else
 		{
-			NrOfVertices = std::stoi(words.at(0));
-		}
-		if (NrOfVertices)
-		{
-			numNodes = NrOfVertices;
-			for (auto iter = words.begin() + 1;
-				iter != words.end();
-				)
+			if (words.size())
 			{
-				//first is the source vertex
-				uint16 src = std::stoi(*iter);
-				iter++;
-				//second is the destination vertex
-				uint16 dest = std::stoi(*iter);
-				iter++;
-				//third is the edge value
-				float32 edge = std::stof(*iter);
-				iter++;
-				this->add(name_generator(src), name_generator(dest), edge);
+				NrOfVertices = std::stoi(words.at(0));
+			}
+			if (NrOfVertices)
+			{
+				numNodes = NrOfVertices;
+				for (auto iter = words.begin() + 1;
+					iter != words.end();
+					)
+				{
+					//first is the source vertex
+					uint16 src = std::stoi(*iter);
+					iter++;
+					//second is the destination vertex
+					uint16 dest = std::stoi(*iter);
+					iter++;
+					//third is the edge value
+					float32 edge = std::stof(*iter);
+					iter++;
+					this->add(name_generator(src), name_generator(dest), edge);
+				}
 			}
 		}
 	}
