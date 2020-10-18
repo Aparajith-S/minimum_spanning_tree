@@ -56,4 +56,5 @@ and so on..
 Application displays "ERROR! File not found". 
 Make sure the input text file is available at the project root directory and named exactly as the filename given in the `main.cpp` file.  
 Once this is solved, run the cmake build as described in `Build the Project` section.  
-If the error still persists, copy the txt file and paste it in the same folder as the generated `MinimumSpanningTree.exe`  and run the .exe from the command prompt.
+If the error still persists, copy the .txt file and paste it both in the \build folder and 
+in the folder where `MinimumSpanningTree.exe` is present and run the .exe from the command prompt.

@@ -38,40 +38,41 @@ namespace undirectedGraph {
 
 	Graph::Graph(const std::string& fileName) : numNodes(0), edgeList()
 	{
-		std::ifstream fptr(fileName);
+		std::ifstream fptr(fileName.c_str());
 		std::istream_iterator<std::string> fstart(fptr);
 		std::istream_iterator<std::string> fend;
 		uint16 NrOfVertices = 0;
 		std::vector<std::string> words(fstart, fend);
-		if (!fptr)
-			std::cout << "ERROR! File not found";
+		if (words.size())
+		{
+			NrOfVertices = std::stoi(words.at(0));
+		}
 		else
 		{
-			if (words.size())
+			std::cout << "Error! File Corrupt or missing!" << std::endl;
+		}
+		if (NrOfVertices)
+		{
+			numNodes = NrOfVertices;
+			for (auto iter = words.begin() + 1;
+				iter != words.end();
+				)
 			{
-				NrOfVertices = std::stoi(words.at(0));
+				//first is the source vertex
+				uint16 src = std::stoi(*iter);
+				iter++;
+				//second is the destination vertex
+				uint16 dest = std::stoi(*iter);
+				iter++;
+				//third is the edge value
+				float32 edge = std::stof(*iter);
+				iter++;
+				this->add(name_generator(src), name_generator(dest), edge);
 			}
-			if (NrOfVertices)
-			{
-				numNodes = NrOfVertices;
-				for (auto iter = words.begin() + 1;
-					iter != words.end();
-					)
-				{
-					//first is the source vertex
-					uint16 src = std::stoi(*iter);
-					iter++;
-					//second is the destination vertex
-					uint16 dest = std::stoi(*iter);
-					iter++;
-					//third is the edge value
-					float32 edge = std::stof(*iter);
-					iter++;
-					this->add(name_generator(src), name_generator(dest), edge);
-				}
-			}
+			fptr.close();
 		}
 	}
+	
 
 	uint32 Graph::V()
 	{
