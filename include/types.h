@@ -1,3 +1,11 @@
+/// @project    Kruskals Minimum Spanning Tree
+/// @brief		Basetypes for this project
+/// @file		types.h
+/// @author		Aparajith Sridharan (s.aparajith@live.com)
+/// @date		11-10-2020
+/// @details	x86_64 and arm64 definitions of fundamental datatypes
+/// @history
+
 #pragma once
 
 typedef unsigned int uint32;

@@ -3,8 +3,7 @@
 /// @file	undirected_graph.h
 /// @author Aparajith Sridharan (s.aparajith@live.com)
 /// @date	25-08-2020
-/// @details 
-/// @history
+/// @details an application can use this graph to construct an undirected graph.
 /// @see ReadMe.md for more details
 
 #pragma once
