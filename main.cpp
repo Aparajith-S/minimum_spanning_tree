@@ -1,4 +1,6 @@
 #include<iostream>
+#include<fstream>
+
 #include"include/kruskal_simulation.h"
 using KruskalSim::KruskalSimulation;
 
