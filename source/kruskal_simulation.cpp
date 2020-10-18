@@ -1,5 +1,6 @@
-/// @brief		Shortest Path class definitions
-/// @file		dijkstra_simulation.cpp
+/// @project    Kruskals Minimum Spanning Tree 
+/// @brief		simulation class definitions
+/// @file		kruskal_simulation.cpp
 /// @author		Aparajith Sridharan (s.aparajith@live.com)
 /// @date		30-08-2020
 /// @details	Main entry point for the entire project. Ostream usage is assumed to be allowed to print to console/file

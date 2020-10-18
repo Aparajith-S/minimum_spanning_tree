@@ -1,4 +1,5 @@
-/// @brief		Shortest Path class declarations
+/// @project    Kruskals Minimum Spanning Tree
+/// @brief		kruskal simulation class declarations
 /// @file		kruskal_simulation.h
 /// @author		Aparajith Sridharan (s.aparajith@live.com)
 /// @date		11-10-2020
