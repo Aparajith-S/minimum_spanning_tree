@@ -1,3 +1,4 @@
+/// @project    Kruskals Minimum Spanning Tree 
 /// @brief		Minimum spanning tree class declarations
 /// @file		minimum_spanning_tree.cpp
 /// @author		Aparajith Sridharan (s.aparajith@live.com)
@@ -6,7 +7,6 @@
 /// @history
 /// @see ReadMe.md for more details
 
-#pragma once
 #include"minimum_spanning_tree.h"
 #include<string>
 #include<vector>

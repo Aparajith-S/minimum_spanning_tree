@@ -1,4 +1,4 @@
-/// @project Kruskals Minimum Spanning Tree 
+/// @project    Kruskals Minimum Spanning Tree 
 /// @brief		Minimum Spanning Tree class declarations
 /// @file		minimum_spanning_tree.h
 /// @author		Aparajith Sridharan (s.aparajith@live.com)
