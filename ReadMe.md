@@ -1,6 +1,6 @@
 # Kruskal's Minimum Spanning Tree
-author: Aparajith Sridharan
-date : 11.10.2020
+author: Aparajith Sridharan  
+date : 11.10.2020  
 
 ## Description
 This project implements the Kruskal's minimum spanning tree algorithm.
